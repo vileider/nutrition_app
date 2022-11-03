@@ -1,0 +1,16 @@
+{
+  "name": "desktopReact",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "windows": "react-native run-windows"
+  },
+  "dependencies": {
+    "react-native": "0.70.4",
+    "react-native-windows": "0.70.4"
+  },
+  "devDependencies": {
+    "metro-config": "^0.72.3"
+  }
+}
