@@ -3,6 +3,17 @@
 # Learn more about .gitignore:
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
+# Ignores .expo directories
+.expo/
+
+# **/ searches through entire repository
+# Lock files 
+# **/yarn.lock - is tracked needs to be fixed
+# **/package-lock.json - this omits properly
+
+
+
+
 # Node artifact files
 node_modules/
 dist/
