@@ -3,6 +3,26 @@
 # Learn more about .gitignore:
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
+# Ignores these directories
+.expo/
+.gradle/
+
+# **/ searches through entire repository
+# Lock files 
+**/.lock 
+**/package-lock.json
+**/Gemfile.lock
+
+**/build.gradle
+**/gradlew
+**/gradlew.bat
+**/settings.gradle
+
+# avoid ignoring these according to https://github.com/github/gitignore
+!gradle.properties
+!gradle-wrapper.properties
+
+
 # Node artifact files
 node_modules/
 dist/
@@ -48,3 +68,4 @@ Thumbs.db
 *.mov
 *.wmv
 
+yarn.lock
