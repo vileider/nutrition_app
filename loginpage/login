@@ -1,0 +1,169 @@
+import React, { useState } from "react";
+import {
+StyleSheet,
+Text,
+View,
+Image,
+TextInput,
+Button,
+TouchableOpacity,
+  Platform,
+  SafeAreaView,
+  StatusBar,
+} from "react-native";
+
+export default function App() {
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+  const [hidden, setHidden] = useState(false);
+  const [statusBarStyle, setStatusBarStyle] = useState(STYLES[0]);
+  const [statusBarTransition, setStatusBarTransition] = useState(TRANSITIONS[0]);
+
+  const changeStatusBarVisibility = () => setHidden(!hidden);
+
+  const changeStatusBarStyle = () => {
+    const styleId = STYLES.indexOf(statusBarStyle) + 1;
+    if (styleId === STYLES.length) {
+      setStatusBarStyle(STYLES[0]);
+    } else {
+      setStatusBarStyle(STYLES[styleId]);
+    }
+  };
+
+  const changeStatusBarTransition = () => {
+    const transition = TRANSITIONS.indexOf(statusBarTransition) + 1;
+    if (transition === TRANSITIONS.length) {
+      setStatusBarTransition(TRANSITIONS[0]);
+    } else {
+      setStatusBarTransition(TRANSITIONS[transition]);
+    }
+  };
+
+
+return (
+<View style={styles.containerTwo}>
+<Image style={styles.image} source={require("./assets/Eat-healthy.jpg")} />
+
+<View style={styles.inputView}>
+<TextInput
+style={styles.TextInput}
+placeholder="Email."
+placeholderTextColor="#003f5c"
+onChangeText={(email) => setEmail(email)}
+/>
+</View>
+
+<View style={styles.inputView}>
+<TextInput
+style={styles.TextInput}
+placeholder="Password."
+placeholderTextColor="#003f5c"
+secureTextEntry={true}
+onChangeText={(password) => setPassword(password)}
+/>
+</View>
+
+<TouchableOpacity>
+<Text style={styles.forgot_button}>Forgot Password?</Text>
+</TouchableOpacity>
+
+<TouchableOpacity style={styles.loginBtn}>
+<Text style={styles.loginText}>LOGIN</Text>
+</TouchableOpacity>
+
+    <SafeAreaView style={styles.containerOne}>
+        <StatusBar
+          animated={true}
+          backgroundColor="#61dafb"
+          barStyle={statusBarStyle}
+          showHideTransition={statusBarTransition}
+          hidden={hidden} />
+        <Text style={styles.textStyle}>
+          StatusBar Visibility:{'\n'}
+          {hidden ? 'Hidden' : 'Visible'}
+        </Text>
+        <Text style={styles.textStyle}>
+          StatusBar Style:{'\n'}
+          {statusBarStyle}
+        </Text>
+        {Platform.OS === 'ios' ? (
+          <Text style={styles.textStyle}>
+            StatusBar Transition:{'\n'}
+            {statusBarTransition}
+          </Text>
+        ) : null}
+        <View style={styles.buttonsContainer}>
+          <Button
+            title="Toggle StatusBar"
+            onPress={changeStatusBarVisibility} />
+          <Button
+            title="Change StatusBar Style"
+            onPress={changeStatusBarStyle} />
+          {Platform.OS === 'ios' ? (
+            <Button
+              title="Change StatusBar Transition"
+              onPress={changeStatusBarTransition} />
+          ) : null}
+        </View>
+      </SafeAreaView>
+);
+}
+
+const styles = StyleSheet.create({
+  containerOne: {
+  backgroundColor: "#fff",
+  alignItems: "center",
+  justifyContent: "center",
+  },
+  
+  image: {
+  marginBottom: 40,
+  },
+  
+  inputView: {
+  backgroundColor: "#FFC0CB",
+  borderRadius: 30,
+  width: "70%",
+  height: 45,
+  marginBottom: 20,
+  
+  alignItems: "center",
+  },
+  
+  TextInput: {
+  height: 50,
+  flex: 1,
+  padding: 10,
+  marginLeft: 20,
+  },
+  
+  forgot_button: {
+  height: 30,
+  marginBottom: 30,
+  },
+
+  loginBtn: {
+  width: "80%",
+  borderRadius: 25,
+  height: 50,
+  alignItems: "center",
+  justifyContent: "center",
+  marginTop: 40,
+  backgroundColor: "#FF1493",
+  },
+
+    containerTwo: {
+      flex: 1,
+      justifyContent: 'center',
+      backgroundColor: '#ECF0F1'
+    },
+
+    buttonsContainer: {
+      padding: 10
+    },
+
+    textStyle: {
+      textAlign: 'center',
+      marginBottom: 8
+    },
+    });
