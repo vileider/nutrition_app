@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "clean_version",
+    "slug": "clean_version",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
