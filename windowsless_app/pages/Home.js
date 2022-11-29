@@ -8,8 +8,8 @@ const HomePage = ({navigation}) => {
         <Text>Home Screen</Text>
         <Header/>
         <Button
-        title="Go to About page"
-        onPress={() => navigation.navigate('AboutPage')}
+        title="Go to Login page"
+        onPress={() => navigation.navigate('LoginPage')}
       />
       </View>
     );
