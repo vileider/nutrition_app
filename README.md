@@ -47,3 +47,11 @@ Refresh the app by typing `r` in the terminal in your code editor
 - Open project in vs code and run `npx expo start` in its own terminal
 
 - In a separate terminal run `npx react-native run-android`
+
+
+### how to run "clean version" 
+### I started app template by "expo init --npm"
+1. download repo
+2. get into /clean_version
+3. npm install
+4. npx expo start
