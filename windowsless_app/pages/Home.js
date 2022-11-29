@@ -8,10 +8,10 @@ const HomePage = ({navigation}) => {
         <Text>Home Screen</Text>
         <Header/>
         <Button
-        title="Go to Login page"
-        onPress={() => navigation.navigate('LoginPage')}
-      />
-      </View>
+        title="Go to Food page"
+        onPress={() => navigation.navigate('FoodPage')}
+    />
+      </View> 
     );
   };
 

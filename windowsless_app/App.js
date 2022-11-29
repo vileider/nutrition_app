@@ -18,6 +18,7 @@
  
  import HomePage from './pages/Home';
  import LoginPage from './pages/Login';
+ import FoodPage from './pages/Food';
  
  const Stack = createNativeStackNavigator();
  
@@ -25,8 +26,9 @@
    return (
      <NavigationContainer>
        <Stack.Navigator>
-         <Stack.Screen name="HomePage" component={HomePage} />
          <Stack.Screen name="LoginPage" component={LoginPage} />
+         <Stack.Screen name="HomePage" component={HomePage} />
+         <Stack.Screen name="FoodPage" component={FoodPage} />
        </Stack.Navigator>
      </NavigationContainer>
    );

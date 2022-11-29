@@ -4,7 +4,8 @@ import { StatusBar } from  'expo-status-bar';
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, TextInput, Image, Button, TouchableOpacity } from 'react-native';
 
-const LoginPage = () => {
+
+const LoginPage = ({navigation}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -32,7 +33,11 @@ const LoginPage = () => {
               ></TextInput>
           </View><TouchableOpacity>
               <Text style={styles.forgot_button}>Forgot Password?</Text>
-          </TouchableOpacity><TouchableOpacity style={styles.loginBtn}>
+          </TouchableOpacity>
+          
+    {/* in here can add a boolean if logged in = true then go to homepage */}
+          <TouchableOpacity style={styles.loginBtn} 
+          onPress={() => navigation.navigate('HomePage')}>
               <Text style={styles.loginText}>LOGIN</Text>
           </TouchableOpacity>
       </View></>
